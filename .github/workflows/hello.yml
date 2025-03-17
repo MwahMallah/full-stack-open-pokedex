@@ -9,8 +9,12 @@ jobs:
     hello_world_job:
         runs-on: ubuntu-20.04
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+            - name: Say hello
+              run: |
+                echo "Hello world"
+            - name: Show date
+              run: 
+                date
             - name: Directory content
               run: 
                 ls -l

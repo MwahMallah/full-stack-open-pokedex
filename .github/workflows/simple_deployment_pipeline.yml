@@ -1,0 +1,21 @@
+name: Simple Delpoyment pipeline
+
+on: 
+    push: 
+        branches: 
+            - main
+
+jobs:
+    simple_deployment_job:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            - name: Install Dependencies
+              run: npm install
+            - name: Check style
+              run: npm run eslint
