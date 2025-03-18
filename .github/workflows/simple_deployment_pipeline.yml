@@ -4,6 +4,10 @@ on:
     push: 
         branches: 
             - main
+    pull_request: 
+      branches: 
+        - main
+      types: [opened, synchronize]
 
 jobs:
     simple_deployment_job:
@@ -24,4 +28,5 @@ jobs:
             - name: Tests
               run: npm run test
             - name: pseudo Delpoyment
+              if: ${{ github.event_name == 'push' }}
               run: echo "Deployment"
