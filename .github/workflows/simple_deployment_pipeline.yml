@@ -28,4 +28,5 @@ jobs:
             - name: Tests
               run: npm run test
             - name: pseudo Delpoyment
+              if: ${{ github.event_name == 'push' }}
               run: echo "Deployment"
