@@ -23,10 +23,5 @@ jobs:
               run: npm run build
             - name: Tests
               run: npm run test
-            - name: Check secrets
-              run: echo ${{ secrets.RENDER_SERVICE_ID }}
-            - name: Deploy
-              uses: sws2apps/render-deployment@main
-              with:
-                serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-                apiKey: ${{ secrets.RENDER_API_KEY }}
+            - name: pseudo Delpoyment
+              run: echo "Deployment"
