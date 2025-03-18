@@ -24,7 +24,7 @@ jobs:
             - name: Tests
               run: npm run test
             - name: Deploy
-              uses: johnbeynon/render-deploy-action@v0.0.8
+              uses: sws2apps/render-deployment@main
               with:
-                service-id: ${{ secrets.RENDER_SERVICE_ID }}
-                api-key: ${{ secrets.RENDER_API_KEY }}
+                serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+                apiKey: ${{ secrets.RENDER_API_KEY }}
