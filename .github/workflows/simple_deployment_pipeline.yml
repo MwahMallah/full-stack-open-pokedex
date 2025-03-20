@@ -35,6 +35,9 @@ jobs:
         - simple_deployment_job
       runs-on: ubuntu-20.04
       steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+          
         - name: Bump version and  push tag
           if: ${{ github.event_name == 'push' }}
           uses: anothrNick/github-tag-action@v1
